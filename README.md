@@ -1,0 +1,1 @@
+A collection of Javacript utilies and types for quick project start.
