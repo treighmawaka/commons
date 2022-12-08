@@ -1,3 +1,5 @@
+import { phoneRegex } from "./string";
+
 /**
  * Checks if the given value is null, empty or undefined.
  *
@@ -42,3 +44,12 @@
  export function isDate(v: any) {
    return v instanceof Date;
  }
+ 
+ /**
+  * Checks if the given string is a phone number.
+  * @param v
+  * @returns 
+  */
+ export function isPhoneNumber(v: string) {
+  return phoneRegex.test(v);
+}

@@ -1,3 +1,5 @@
+import { isPhoneNumber } from "./is";
+
 /**
  * Is the given value a string?
  *
@@ -228,3 +230,20 @@ export function sanitizeString(str: string) {
   const trimmed = str ? str.trim() : str;
   return stripTags(trimmed);
 }
+
+/**
+ * North American Phone Number format.
+ */
+ export const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+ 
+ /**
+  * Formats a North American phone number.
+  *
+  * @param value
+  * @returns
+  */
+ export function formatPhoneNumber(value: string) {
+   if (!isPhoneNumber(value)) return value;
+ 
+   return value.replace(phoneRegex, "($1) $2-$3");
+ }
