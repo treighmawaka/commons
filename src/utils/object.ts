@@ -7,7 +7,7 @@ import { toCamelCase } from "./string"
  * @param object 
  * @returns 
  */
-function toCamelCasedObject(object: BasicObject) {
+export function toCamelCasedObject(object: BasicObject) {
   return Object
     .entries(object)
     .reduce((carry: BasicObject, [key, value]) => {
